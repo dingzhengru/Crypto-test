@@ -4,6 +4,7 @@
 ## 參考
 * 密碼學、Hash、編碼: https://medium.com/d-d-mag/%E7%82%BA%E4%BB%80%E9%BA%BC%E4%BD%A0%E9%9C%80%E8%A6%81%E6%87%82%E4%B8%80%E9%BB%9E%E5%AF%86%E7%A2%BC%E5%AD%B8-709c090452aa
 * 加密與雜湊的差別: https://blog.m157q.tw/posts/2017/12/25/differences-between-encryption-and-hashing/
+* 數位簽章: https://ithelp.ithome.com.tw/articles/10188465
 
 ## 編碼
 * 其實不算加密，只是將資料編碼方便計算、或是在網路上傳遞。實際使用時很常看到，所以特別提出來
@@ -36,6 +37,9 @@
 * 舉例
   * 傳送方: SHA 將原文轉換成雜湊值 => RSA 公鑰加密雜湊值 => 傳送資料
   * 接收方: 接收資料 => RSA 私鑰解密拿到雜湊值 => 將原文用 SHA 轉換雜湊值 與 接收到的雜湊值做檢查
+
+## 數位簽章(Digital Signature)
+* 主要使用雜湊與加密演算法的組合，雜湊可以確保完整，透過安全的金鑰加密雜湊則可以確保正確的識別
 
 ## Library
 * jsencrypt https://github.com/travist/jsencrypt

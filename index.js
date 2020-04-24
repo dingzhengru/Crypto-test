@@ -23,48 +23,31 @@ JPsb28jrLUhrkkCftBggExC6S80yb0xvVMGvjsKeFOZzjQ==
 -----END RSA PRIVATE KEY-----
 `
 
-console.log(pubKey)
-
-
 const password = 'zxcv1234'
 
-// Create the encryption object and set the key.
-// 創建一個用 "私鑰加密" 物件 
-const encrypt = new JSEncrypt()
+/* RSA 非對稱加密 */
 
-// 設私鑰
-// encrypt.setPrivateKey(priKey) //You can use also setPrivateKey and setPublicKey, they are both alias to setKey
+// 創建 "公鑰加密" 物件 
+const encrypt = new JSEncrypt()
 
 // 設公鑰
 encrypt.setPublicKey(pubKey) //You can use also setPrivateKey and setPublicKey, they are both alias to setKey
 
-//Eventhough the methods are called setPublicKey and setPrivateKey, remember
-//that they are only alias to setKey, so you can pass them both a private or
-//a public openssl key, just remember that setting a public key allows you to only encrypt.
-
-
-// 加密(私鑰)
+// 加密(公鑰)
 const enc = encrypt.encrypt(password)
 
 console.log(enc)
 
-
+// 創建 "私鑰解密" 物件
 const decrypt = new JSEncrypt()
 
+// 設私鑰
 decrypt.setPrivateKey(priKey)
 
+// 解密(私鑰)
 const dec = decrypt.decrypt(enc)
 
 console.log(dec)
 
-// Now decrypt the crypted text with the private key.
-// const dec = crypt.decrypt(enc)
-
-// Now a simple check to see if the round-trip worked.
-// if (dec === text){
-//     alert('It works!!!')
-// } else {
-//     alert('Something went wrong....')
-// }
- 
-
+/* 數位簽章 */
+// 此 library 已拔掉
