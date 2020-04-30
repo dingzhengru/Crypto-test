@@ -36,8 +36,6 @@ encrypt.setPublicKey(pubKey) //You can use also setPrivateKey and setPublicKey, 
 // 加密(公鑰)
 const enc = encrypt.encrypt(password)
 
-console.log(enc)
-
 // 創建 "私鑰解密" 物件
 const decrypt = new JSEncrypt()
 
@@ -47,7 +45,7 @@ decrypt.setPrivateKey(priKey)
 // 解密(私鑰)
 const dec = decrypt.decrypt(enc)
 
-console.log(dec)
+console.log(`rsa: ${ enc } ${ dec }`)
 
 /* 數位簽章 */
 // 此 library 已拔掉

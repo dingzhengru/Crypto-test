@@ -42,4 +42,5 @@
 * 主要使用雜湊與加密演算法的組合，雜湊可以確保完整，透過安全的金鑰加密雜湊則可以確保正確的識別
 
 ## Library
-* jsencrypt https://github.com/travist/jsencrypt
+* jsencrypt: https://github.com/travist/jsencrypt
+* crypto-js: https://github.com/brix/crypto-js
