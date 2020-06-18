@@ -42,6 +42,17 @@
 ## 數位簽章(Digital Signature)
 * 主要使用雜湊與加密演算法的組合，雜湊可以確保完整，透過安全的金鑰加密雜湊則可以確保正確的識別
 
+## RSA 加密過長怎麼半
+* 對資料進行 hash ，因 hash 過後的資料長度是固定的，所以不會有資料過大的問題，hash(data) -> rsa(hash) 即可
+* 使用 RSA + AES的方式，下面說明
+
+## RSA + AES
+- 當資料太長、加密過慢時可以用此方法
+- 參考: https://ithelp.ithome.com.tw/articles/10188528
+- 簡單來說: 
+  - 加密: RSA 對 AES 的 key 加密，AES 對資料加密
+  - 解密: RSA 解密 AES 的 key，取得 key 後，AES 對資料解密
+
 ## Library
 * jsencrypt: https://github.com/travist/jsencrypt
 * crypto-js: https://github.com/brix/crypto-js
